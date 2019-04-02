@@ -27,3 +27,7 @@ plt.xlabel("Годы")
 # отображение диаграммы
 plt.show()
 print('\a')
+
+xs = [i +0.1 for i, _ in enumerate(years)]
+plt.bar(xs,gdp)
+plt.show()
