@@ -31,3 +31,21 @@ print('\a')
 xs = [i +0.1 for i, _ in enumerate(years)]
 plt.bar(xs,gdp)
 plt.show()
+
+############## ЛИНЕЙНЫЕ ГРАФИКИ
+variance = [1,2,4,8,16,32,64,128,256]
+bias_squared = [256,128,64,32,16,8,4,2,1]
+# суммарная ошибка
+total_error = [ x + y for x,y in zip(variance,bias_squared)]
+xs = [i for i, _ in enumerate(variance)]
+plt.plot(xs, variance, 'g-', label = 'Дисперсия')
+plt.plot(xs, bias_squared, 'r-.', label = 'Смещение^2')
+plt.plot(xs, total_error, 'b:', label = 'Суммарная Ошибка')
+# loc=9 наверху посередине
+plt.legend(loc = 9)
+plt.xlabel("Сложность модели")
+plt.title("Компромисс между смещением и дисперсией")
+plt.show()
+
+plt.scatter(variance,bias_squared)
+plt.show()
